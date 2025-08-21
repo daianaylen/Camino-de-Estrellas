@@ -1,0 +1,324 @@
+/* --- RESET BÁSICO --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- BODY CIELO EN DEGRADÉ --- */
+body {
+  background-attachment: fixed;
+  font-family: 'Alice', serif;
+  background-image: linear-gradient(
+    to bottom,
+   #f6df6c,
+   #f7d46a, 
+   #f7c969, 
+   #f0c481, 
+   #e6bd8e, 
+   #efb783, 
+   #f38b94, 
+   #ea7eb0, 
+   #815ed3, 
+   #664ec5, 
+   #487add);
+}
+
+/* CONTENEDOR GENERAL */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/* =============================================================
+    HEADER OSCURO
+    =============================================================*/
+.header {
+  background-color: #000;
+  color: #fff;
+  border-bottom: 1px solid #333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .logo img {
+  height: 145px;
+  width: auto;
+}
+
+.nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.nav a:hover {
+  background: linear-gradient(45deg, #ffd698, #ff99c8, #9575cd);
+  -webkit-background-clip: text;
+  background-clip: text; /* Propiedad estándar */
+  color: transparent;
+  opacity: 1;
+}
+
+/* input oculto */
+#menu-toggle { display: none; }
+
+.hamburguesa {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+/* al hacer hover sobre el ícono de hamburguesa */
+.hamburguesa:hover {
+  background: linear-gradient(45deg, #ffd698, #ff99c8, #9575cd);
+  -webkit-background-clip: text;
+  background-clip: text; /* Propiedad estándar */
+  color: transparent;
+}
+/* --- QUIENES SOMOS --- */
+.quienes-somos {
+  max-width: 920px;
+  margin: 3rem auto;
+}
+
+.bio-container {
+  background: #000;
+  border-radius: 20px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  color: #fff;
+}
+
+.quienes-somos h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+/* ----- BIO EN GRID con ÁREAS (orden perfecto) ----- */
+.bio-container .bio {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 160px; /* texto | foto */
+  grid-template-areas: "text photo";
+  gap: 1.2rem 2rem;
+  align-items: start;
+  margin-bottom: 2.5rem;
+}
+
+.bio-text { 
+  grid-area: text;
+  max-width: 64ch; /* ancho cómodo de lectura */
+}
+
+/* Jerarquías */
+.bio-container .bio h3 {
+  font-family: "Alice", serif;
+  font-size: 1.35rem;
+  letter-spacing: .5px;
+  margin: 0 0 .25rem 0;
+}
+.bio-container .bio h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: .9;
+  margin: 0 0 .75rem 0;
+}
+
+/* Texto */
+.bio-container .bio p,
+.bio-container .bio li {
+  line-height: 1.65;
+}
+.bio-container .bio p + p {
+  margin-top: .6rem;
+}
+
+/* Listas prolijas (respetamos emojis) */
+.bio-container .bio ul {
+  list-style: none;
+  padding-left: 0;
+  margin: .6rem 0 0 0;
+}
+.bio-container .bio li {
+  padding-left: .2rem;
+  margin: .35rem 0;
+}
+
+/* Foto */
+.bio-container .bio-img {
+  grid-area: photo;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  align-self: start;
+}
+
+/* Alterno el orden solo para Claudia (foto | texto) */
+.bio-container .claudia {
+  grid-template-columns: 160px minmax(320px, 1fr);
+  grid-template-areas: "photo text";
+}
+
+/* Separadores suaves entre bios (opcional) */
+.bio-container .bio:not(.texto-final) {
+  position: relative;
+}
+.bio-container .bio:not(.texto-final)::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent);
+  margin-top: 2rem;
+  grid-column: 1 / -1;
+}
+
+/* ----- BLOQUE FINAL ----- */
+.texto-final {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1.2rem 2rem;
+  align-items: start;
+}
+
+.texto-final-p {
+  color:#ea7eb0;
+}
+
+.cierrecito-cute {
+  max-width: 100%;
+  background:#6777dc;
+  backdrop-filter: blur(4px);
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(255,214,100,0.9);
+  position: relative;
+  color: #ffd698;
+}
+.cierrecito-cute::before {
+  content: "★";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  font-size: 1.8rem;
+  color: #fff;
+  text-shadow:
+    0 0 4px rgba(255,214,100,0.9),
+    0 0 6px rgba(255,214,100,0.6);
+}
+.footer {
+  background-color: #000;
+  color: #fff;
+  border-top: 1px solid #333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-size: 1.4rem;
+  transition: opacity 0.3s ease;
+}
+
+.footer a:hover {
+  opacity: 0.7;
+  background: linear-gradient(45deg, #ffd698, #ff99c8, #9575cd);
+  -webkit-background-clip: text;
+  background-clip: text; /* Propiedad estándar */
+  color: transparent;
+  opacity: 1;
+}
+
+
+
+/* ----- MOBILE ----- */
+/* ----- MOBILE ----- */
+@media (max-width: 768px) {
+  .bio-container .bio {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "photo";
+    text-align: center;
+  }
+  .bio-container .bio-img {
+    justify-self: center;
+    margin-top: .75rem;
+  }
+  .texto-final {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .cierrecito-cute { max-width: 100%; }
+}
+/* =============================================================
+   MOBILE (menú desplegable desde debajo del header)
+   =============================================================*/
+@media (max-width: 768px) {
+
+  .hamburguesa {
+    display: block;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    font-size: 2.4rem;
+  }
+
+  .header .logo img {
+    height: 165px; /* logo más grande en mobile */
+  }
+
+  .nav ul {
+    position: absolute;
+    top: 100%;               /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    background: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  #menu-toggle:checked ~ .nav ul {
+    max-height: 500px;      /* crece hacia abajo */
+    padding: 1rem 0 2rem 0;
+  }
+
+  .nav a {
+    color: #fff;
+    font-size: 1.4rem;
+  }
+}
+
+/* =============================================================
+   EXTRA responsive (celus tipo Edge)
+   =============================================================*/
+  .container {
+    width: 95%;
+    padding: 1.5rem 0;
+  }
