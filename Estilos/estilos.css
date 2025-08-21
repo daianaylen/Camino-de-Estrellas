@@ -4,6 +4,8 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Imágenes global: nunca deformar */
+img { max-width: 100%; height: auto; }
 
 /* --- BODY CIELO EN DEGRADÉ --- */
 body {
@@ -100,10 +102,19 @@ body {
   box-shadow: 0 10px 28px rgba(0,0,0,0.3);
   backdrop-filter: blur(4px);
 }
-.hero-logo {
-  width: 140px;
+/* fallback: si el <img> del hero no tiene la clase */
+.home-hero .hero-box > img {
+  display: block;
+  width: clamp(96px, 22vw, 160px);
   height: auto;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
+}
+/* HERO logo (tamaño fluido y seguro) */
+.hero-logo {
+  display: block;
+  width: clamp(96px, 22vw, 160px);
+  height: auto;
+  margin: 0 auto 1rem;
   filter: drop-shadow(0 4px 10px rgba(0,0,0,.35));
 }
 .home-hero h1 {
@@ -413,6 +424,9 @@ body {
 @media (max-width: 600px) {
   .comment-form .form-row { grid-template-columns: 1fr; }
   .home-cards { grid-template-columns: 1fr; }
+  .home-hero .hero-box {
+    padding: 2.25rem 1.25rem; /* antes 4rem 3rem */
+  }
 }
 /* ----- MOBILE ----- */
 @media (max-width: 768px) {
