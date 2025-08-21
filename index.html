@@ -34,7 +34,71 @@
     </ul>
   </nav>
 </header>
+<!-- ===== HOME / HERO ===== -->
+<section class="home-hero container">
+  <div class="hero-box">
+    <img src="multimedia/camino-logo-png-bl.png" alt="Camino de Estrellas" class="hero-logo">
+    <h1>Un camino de luz para recordar quién sos</h1>
+    <a class="cta-primary" href="lecturas.html">Explorá nuestras lecturas</a>
+  </div>
+</section>
 
+<!-- ===== MINI RESUMEN ===== -->
+<section class="home-summary container">
+  <p>✨ <strong>Camino de Estrellas</strong> es un espacio de sanación y transformación espiritual.</p>
+  <p>A través de lecturas, encuentros y terapias energéticas, te acompañamos a reconectar con tu alma, liberar memorias y abrirte a la vida que deseás.</p>
+  <p>Un viaje de amor, claridad y expansión, guiado por Sol y Claudia.</p>
+</section>
+
+<!-- ===== CARDS / ACCESOS RÁPIDOS ===== -->
+<section class="home-cards container">
+  <article class="home-card">
+    <div class="card-emoji">🔮</div>
+    <h3>Lecturas</h3>
+    <p>Registros Akáshicos y Tarot del Alma.</p>
+    <a href="lecturas.html" class="card-link">Ir a Lecturas</a>
+  </article>
+
+  <article class="home-card">
+    <div class="card-emoji">🌿</div>
+    <h3>Encuentros</h3>
+    <p>Talleres y jornadas de transformación.</p>
+    <a href="encuentros.html" class="card-link">Ver Encuentros</a>
+  </article>
+
+  <article class="home-card">
+    <div class="card-emoji">📖</div>
+    <h3>Te comentamos quiénes somos y cómo te podemos ayudar.</h3>
+    <p>Conocenos!</p>
+    <a href="quienes-somos.html" class="card-link">Quiénes somos</a>
+  </article>
+
+  <article class="home-card">
+    <div class="card-emoji">💌</div>
+    <h3>Contacto y Agenda</h3>
+    <p>Escribinos para consultas y orientación y enterate de los próximos encuentros.</p>
+    <a href="contacto.html" class="card-link">Contactar</a>
+  </article>
+</section>
+
+<!-- ===== COMENTARIOS ===== -->
+<section class="home-comments container">
+  <h2>Dejá tu comentario</h2>
+
+  <form id="comment-form" class="comment-form" autocomplete="off">
+    <div class="form-row">
+      <input type="text" id="c-name" name="name" placeholder="Tu nombre" required>
+      <input type="text" id="c-city" name="city" placeholder="Ciudad (opcional)">
+    </div>
+    <textarea id="c-text" name="text" rows="4" placeholder="Escribí tu mensaje..." required></textarea>
+    <button type="submit" class="cta-secondary">Publicar</button>
+    <small class="form-hint">Tus comentarios quedan guardados en este dispositivo. Para que se vean en todos, después te lo conecto con un backend.</small>
+  </form>
+
+  <div id="comment-list" class="comment-list">
+    <!-- Los comentarios se insertan acá con JS -->
+  </div>
+</section>
     <script src="javascript/script.js"></script>
 </body>
 <footer class="footer">
