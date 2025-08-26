@@ -495,13 +495,16 @@ body {
     0 0 6px rgba(255,214,100,0.6);
 }
 
-/* ====== Sesiones: layout de tarjetas ====== */
+/* =========================
+   SESIONES (cards)
+   ========================= */
 .sessions-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(240px, 1fr));
   gap: 1rem;
 }
-/* Ajustes suaves para las cards de sesión (reusan .home-card) */
+
+/* Ajustes de contenido dentro de cada card de sesión */
 .session-card .session-points {
   list-style: none;
   margin: .4rem 0 0;
@@ -520,6 +523,109 @@ body {
   top: 0;
   opacity: .65;
 }
+
+/* =========================
+   AGENDA (Sol / Clau)
+   ========================= */
+.agenda-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;           /* espacio entre Sol y Clau */
+  flex-wrap: wrap;     /* en mobile se apilan */
+  margin-bottom: 2rem;
+}
+.agenda-cards .home-card {
+  flex: 1 1 300px;     /* mínimo 300px, luego se adaptan */
+  max-width: 400px;    /* no crecen demasiado */
+}
+
+/* =========================
+   AGENDA & CONTACTO (bloque)
+   ========================= */
+.agenda-contacto {
+  text-align: center;
+  margin-top: 3rem;
+}
+.agenda-contacto h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
+  color: #6777dc;
+}
+
+/* Grilla de agendas (si usás cards de agenda independientes) */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+.agenda-card {
+  background-color: rgba(255, 182, 193, 0.3);
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: #6777dc;
+  box-shadow: #fff 0 0 5px;
+  display: grid;
+  gap: .5rem;
+  align-content: start;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.agenda-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 10px #fff;
+}
+
+/* =========================
+   CONTACTO (links + redes)
+   ========================= */
+.contacto-grid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #6777dc;
+  font-weight: 600;
+  transition: opacity .2s;
+}
+.contact-link:hover { opacity: .8; }
+.contacto-extra { margin-top: 1.5rem; }
+
+/* Cards de redes */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.social-card {
+  background-color: rgba(255, 182, 193, 0.3);
+  border-radius: 16px;
+  padding: 1.25rem;
+  color: #6777dc;
+  box-shadow: #fff 0 0 5px;
+  display: grid;
+  gap: .5rem;
+  align-content: start;
+  text-align: center;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.social-card:hover { transform: translateY(-3px); box-shadow: 0 0 10px #fff; }
+.social-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto .25rem;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  background: #fff;
+  color: #6777dc;
+  box-shadow: inset 0 0 0 2px rgba(103,119,220,.15);
+}
+.social-icon i { font-size: 1.6rem; }
+
 .footer {
   background-color: #da9164;
   color: #fff;
@@ -551,7 +657,7 @@ body {
 
 
 /* ----- MOBILE del home ----- */
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE home ===== */
 @media (max-width: 992px) {
   .home-cards { grid-template-columns: repeat(2, 1fr); }
 }
@@ -563,7 +669,7 @@ body {
   }
 }
 /*MOBILE DE ENCUENTROS*/
-/* Responsivo */
+/* Responsivo encuentros fotos*/
 @media (max-width: 768px) {
   .carousel { padding: .6rem .6rem 1rem; 
     --per-view: 2; /* 2 fotos en mobile*/
@@ -575,7 +681,7 @@ body {
 @media (min-width: 1200px) {
   .carousel { --per-view: 3; }
 }
-/* ----- MOBILE ----- */
+/* ----- MOBILE bio quienes somos ----- */
 @media (max-width: 768px) {
   .bio-container .bio {
     grid-template-columns: 1fr;
@@ -618,8 +724,7 @@ body {
     right: 0;
     bottom: 0;               /* hasta abajo */
     width: 100vw;
-
-    background: #fff;
+    background: #eb9ac0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -645,10 +750,9 @@ body {
   }
 
   .nav a {
-    color: #6777dc;
+    color: #fff;
     font-size: 1.4rem;
   }
-}
 
 /* EXTRA responsive (celus chicos tipo Edge) */
 @media (max-width: 420px) {
@@ -657,10 +761,14 @@ body {
     padding: 1.5rem 0;
   }
 }
-/* En móviles y tablets */
+/* =========================
+   RESPONSIVE
+   ========================= */
 @media (max-width: 992px) {
   .sessions-grid { grid-template-columns: repeat(2, 1fr); }
+  .social-grid   { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
   .sessions-grid { grid-template-columns: 1fr; }
+  .social-grid   { grid-template-columns: 1fr; }
 }
