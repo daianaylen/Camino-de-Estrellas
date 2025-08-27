@@ -407,7 +407,7 @@ body {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) 160px; /* texto | foto */
   grid-template-areas: "text photo";
-  gap: 1.2rem 2rem;
+  gap: 1.2rem 1rem;
   align-items: start;
   margin-bottom: 2.5rem;
 }
@@ -454,11 +454,11 @@ body {
 /* Foto */
 .bio-container .bio-img {
   grid-area: photo;
-  width: 140px;
-  height: 140px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: #fff 0 0 5px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.8);
   align-self: start;
 }
 
