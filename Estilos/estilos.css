@@ -35,7 +35,7 @@ body {
     HEADER OSCURO
     =============================================================*/
 .header {
-  background-color: #da9164;
+  background-color: #e59e71;
   border-bottom: 1px solid #e6bd8e;
   padding: 1rem 2rem;
   display: flex;
@@ -88,22 +88,11 @@ body {
   background-clip: text; /* Propiedad estándar */
   color: transparent;
 }
-/* ===== HOME / HERO ===== */
-.home-hero .hero-box {
-  background-color: #da9164;
-  color: #fff;
-  border-radius: 24px;
-  padding: 2rem 1rem;
+/* Hero sin contenedor */
+.home-hero {
   text-align: center;
-  backdrop-filter: blur(4px);
-  box-shadow: #fff 0 0 5px;
-}
-/* fallback: si el <img> del hero no tiene la clase */
-.home-hero .hero-box > img {
-  display: block;
-  width: clamp(96px, 40vw, 160px);
-  height: auto;
-  margin: 0 auto 1rem;
+  padding: 2.5rem 1rem 1.25rem;
+  color: #fff;
 }
 /* HERO logo (tamaño fluido y seguro) */
 .hero-logo {
@@ -112,15 +101,42 @@ body {
   height: auto;
   margin: 0 auto 1rem;
 }
+
 .home-hero h1 {
   font-size: clamp(1.4rem, 2.5vw, 2rem);
   margin-bottom: 1rem;
   letter-spacing: .5px;
 }
+
+/* === Mini resumen con foto sola === */
+.resumen-texto {
+  text-align: center;
+  color: #6777dc;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+}
+
+.resumen-texto p {
+  max-width: 70ch;
+  margin: .3rem auto;
+  line-height: 1.6;
+}
+
+/* Foto del resumen: sola, centrada y con sombra */
+.resumen-foto {
+  display: block;
+  margin: 1rem auto 1.5rem;       /* centrada */
+  width: clamp(180px, 45vw, 340px);/* tamaño sensible, no gigante */
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.9); /* glow suave blanco */
+}
+
+
+/* Botón principal */
 .cta-primary {
   display: inline-block;
   margin-top: .5rem;
-  background-color: #da9164;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
   color: #fff;
   font-weight: 200;
   text-decoration: none;
@@ -128,8 +144,10 @@ body {
   border-radius: 12px;
   transition: transform .15s ease, opacity .15s ease;
 }
+
 .cta-primary:hover { 
-  transform: translateY(-2px); opacity: .95; 
+  transform: translateY(-2px); 
+  opacity: .95; 
   background: linear-gradient(45deg, #7193e9, #9575cd);
 }
 
@@ -139,11 +157,13 @@ body {
   color: #6777dc;
   text-shadow: 0 1px 2px rgba(0,0,0,.25);
 }
+
 .home-summary p { 
   max-width: 70ch; 
   margin: .3rem auto; 
   line-height: 1.6; 
 }
+
 
 /* ===== CARDS ===== */
 .home-cards {
@@ -152,8 +172,8 @@ body {
   gap: 1rem;
 }
 .home-card {
-  background-color: #da9164;
-  color: #6777dc;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  color: #9575cd;
   border-radius: 18px;
   padding: 1.2rem;
   box-shadow: #fff 0 0 5px;
@@ -188,8 +208,8 @@ body {
   letter-spacing: .8px;
 }
 .comment-form {
-  background-color: #da9164;
-  color: #6777dc;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  color: #9575cd;
   border-radius: 18px;
   padding: 1rem;
   margin-bottom: 1rem;
@@ -206,7 +226,7 @@ body {
   width: 100%;
   background: #fff;
   border: 1px solid #da9164;
-  color: #6777dc;
+  color: #9575cd;
   padding: .7rem .8rem;
   border-radius: 10px;
   outline: none;
@@ -217,7 +237,7 @@ body {
 
 .cta-secondary {
   margin-top: .75rem;
-  background: #6777dc;
+  background: #9575cd;
   color: #fff;
   padding: .6rem .9rem;
   border-radius: 10px;
@@ -234,8 +254,8 @@ body {
   gap: .8rem;
 }
 .comment-item {
-  background-color: #da9164;
-  color: #fff;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  color: #9575cd;
   border-radius: 14px;
   padding: .9rem 1rem;
   box-shadow: #fff 0 0 5px;
@@ -264,7 +284,7 @@ body {
   max-width: 72ch;
   margin: .5rem auto 0;
   line-height: 1.6;
-  color: #6777dc;
+  color: #9575cd;
 }
 /*ENCUENTROS*/
 .album { margin-top: 1.4rem; }
@@ -278,8 +298,8 @@ body {
 /* Card del carrusel (sin cambios grandes, por si ya lo tenías) */
 .carousel {
   position: relative;
-  background-color: #da9164;
-  color: #fff;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  color: #9575cd;
   border-radius: 18px;
   box-shadow: #fff 0 0 5px;
   padding: .8rem .9rem 1.2rem;
@@ -330,7 +350,7 @@ body {
   border-radius: 999px;
   border: 1px solid #fff;
   background:#fff;
-  color: #da9164;
+  color: #9575cd;
   cursor: pointer;
   display: grid;
   place-items: center;
@@ -367,10 +387,10 @@ body {
 }
 
 .bio-container {
-  background-color: #da9164;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  color: #9575cd;
   border-radius: 20px;
   padding: 1rem 1.5rem;
-  color: #fff;
   box-shadow: #fff 0 0 5px;
 }
 
@@ -470,7 +490,7 @@ body {
 }
 
 .texto-final-p {
-  color:#6777dc;
+  color:#9575cd;
 }
 
 .cierrecito-cute {
@@ -532,6 +552,7 @@ body {
   gap: 2rem;           /* espacio entre Sol y Clau */
   flex-wrap: wrap;     /* en mobile se apilan */
   margin-bottom: 2rem;
+  
 }
 .agenda-cards .home-card {
   flex: 1 1 300px;     /* mínimo 300px, luego se adaptan */
@@ -548,7 +569,6 @@ body {
 .agenda-contacto h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 1.5rem;
-  color: #6777dc;
 }
 
 /* Grilla de agendas (si usás cards de agenda independientes) */
@@ -559,10 +579,9 @@ body {
   margin-bottom: 2.5rem;
 }
 .agenda-card {
-  background-color: #da9164;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
   border-radius: 16px;
   padding: 1.5rem;
-  color: #6777dc;
   box-shadow: #fff 0 0 5px;
   display: grid;
   gap: .5rem;
@@ -602,10 +621,10 @@ body {
   gap: 1rem;
 }
 .social-card {
-  background-color: #da9164;
+  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  color: #9575cd;
   border-radius: 16px;
   padding: 1.25rem;
-  color: #fff;
   box-shadow: #fff 0 0 5px;
   display: grid;
   gap: .5rem;
@@ -620,7 +639,7 @@ body {
   border-radius: 14px;
   display: grid; place-items: center;
   background: #fff;
-  color: #6777dc;
+  color: #9575cd;
   box-shadow: inset 0 0 0 2px rgba(103,119,220,.15);
 }
 .social-icon i { font-size: 1.6rem; }
@@ -676,6 +695,7 @@ body {
   .cnav { width: 34px; height: 34px; font-size: 1.2rem; }
   .slide { height: clamp(200px, 56vw, 320px); 
   aspect-ratio: 4 / 5;}
+
 }
 @media (min-width: 1200px) {
   .carousel { --per-view: 3; }
