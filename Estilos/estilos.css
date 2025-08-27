@@ -35,7 +35,7 @@ body {
     HEADER OSCURO
     =============================================================*/
 .header {
-  background-color: #e59e71;
+   background-color: #f7b896; /* durazno pastel */
   border-bottom: 1px solid #e6bd8e;
   padding: 1rem 2rem;
   display: flex;
