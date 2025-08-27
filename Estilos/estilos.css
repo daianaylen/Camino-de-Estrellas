@@ -215,75 +215,6 @@ body {
   color: transparent;
 }
 
-/* ===== COMENTARIOS ===== */
-.home-comments h2 {
-  text-align: center;
-  color: #fff;
-  margin-bottom: 1rem;
-  letter-spacing: .8px;
-}
-.comment-form {
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
-  color: #9575cd;
-  border-radius: 18px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: #fff 0 0 5px;
-}
-.comment-form .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .75rem;
-  margin-bottom: .75rem;
-}
-.comment-form input,
-.comment-form textarea {
-  width: 100%;
-  background: #fff;
-  border: 1px solid #da9164;
-  color: #9575cd;
-  padding: .7rem .8rem;
-  border-radius: 10px;
-  outline: none;
-  box-shadow: #fff 0 0 2px;
-}
-.comment-form input::placeholder,
-.comment-form textarea::placeholder { opacity: .7; }
-
-.cta-secondary {
-  margin-top: .75rem;
-  background: #9575cd;
-  color: #fff;
-  padding: .6rem .9rem;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 700;
-  transition: transform .15s ease, opacity .15s ease, border-color .15s ease;
-}
-.cta-secondary:hover { transform: translateY(-2px); border-color: #6777dc; }
-
-.form-hint { display:block; margin-top:.4rem; opacity:.7; }
-
-.comment-list {
-  display: grid;
-  gap: .8rem;
-}
-.comment-item {
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
-  color: #9575cd;
-  border-radius: 14px;
-  padding: .9rem 1rem;
-  box-shadow: #fff 0 0 5px;
-}
-.comment-meta {
-  display: flex;
-  gap: .6rem;
-  align-items: baseline;
-  font-size: .92rem;
-  opacity: .85;
-}
-.comment-meta .dot { opacity: .6; }
-.comment-text { margin-top: .35rem; line-height: 1.55; }
 /* ===== ENCUENTROS: Álbum de fotos con carrusel ===== */
 .encuentros-head {
   text-align: center;
@@ -677,7 +608,7 @@ body {
 .social-icon i { font-size: 1.6rem; }
 
 .footer {
-  background-color: #da9164;
+   background-color: #f7b896; /* durazno pastel */
   color: #fff;
   border-top: 1px solid #e6bd8e;
   padding: 1rem 2rem;
