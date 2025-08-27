@@ -90,7 +90,7 @@ body {
 }
 /* ===== HOME / HERO ===== */
 .home-hero .hero-box {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   color: #fff;
   border-radius: 24px;
   padding: 2rem 1rem;
@@ -152,7 +152,7 @@ body {
   gap: 1rem;
 }
 .home-card {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   color: #6777dc;
   border-radius: 18px;
   padding: 1.2rem;
@@ -188,7 +188,7 @@ body {
   letter-spacing: .8px;
 }
 .comment-form {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   color: #6777dc;
   border-radius: 18px;
   padding: 1rem;
@@ -234,7 +234,7 @@ body {
   gap: .8rem;
 }
 .comment-item {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   color: #fff;
   border-radius: 14px;
   padding: .9rem 1rem;
@@ -278,7 +278,7 @@ body {
 /* Card del carrusel (sin cambios grandes, por si ya lo tenías) */
 .carousel {
   position: relative;
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   color: #fff;
   border-radius: 18px;
   box-shadow: #fff 0 0 5px;
@@ -367,7 +367,7 @@ body {
 }
 
 .bio-container {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   border-radius: 20px;
   padding: 1rem 1.5rem;
   color: #fff;
@@ -523,7 +523,6 @@ body {
   top: 0;
   opacity: .65;
 }
-
 /* =========================
    AGENDA (Sol / Clau)
    ========================= */
@@ -560,7 +559,7 @@ body {
   margin-bottom: 2.5rem;
 }
 .agenda-card {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   border-radius: 16px;
   padding: 1.5rem;
   color: #6777dc;
@@ -576,7 +575,7 @@ body {
 }
 
 /* =========================
-   CONTACTO (links + redes)
+    CONTACTO (links + redes)
    ========================= */
 .contacto-grid {
   display: grid;
@@ -589,7 +588,7 @@ body {
   gap: .5rem;
   font-size: 1rem;
   text-decoration: none;
-  color: #6777dc;
+  
   font-weight: 600;
   transition: opacity .2s;
 }
@@ -603,10 +602,10 @@ body {
   gap: 1rem;
 }
 .social-card {
-  background-color: rgba(255, 182, 193, 0.3);
+  background-color: #da9164;
   border-radius: 16px;
   padding: 1.25rem;
-  color: #6777dc;
+  color: #fff;
   box-shadow: #fff 0 0 5px;
   display: grid;
   gap: .5rem;
