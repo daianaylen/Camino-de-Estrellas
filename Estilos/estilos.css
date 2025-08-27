@@ -94,6 +94,30 @@ body {
   padding: 2.5rem 1rem 1.25rem;
   color: #fff;
 }
+/* Vuelve el contenedor del hero */
+.home-hero .hero-box{
+  background: rgba(255,240,245,0.44); /* translúcido rosado */
+  border-radius: 24px;
+  padding: 2rem 1.25rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 6px rgba(255,255,255,0.9);
+  text-align: center;
+
+   display: inline-block;   /* se encoge al contenido */
+  max-width: 720px;        /* límite para que no se haga gigante en desktop */
+  margin: 0 auto;          /* centrado */
+}
+
+/* La foto del resumen ya la tenías, aseguro centrado y sombra suave */
+.resumen-foto{
+  display: block;
+  margin: 1rem auto 0;
+  width: 70%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.8);
+}
 /* HERO logo (tamaño fluido y seguro) */
 .hero-logo {
   display: block;
@@ -121,15 +145,6 @@ body {
   line-height: 1.6;
 }
 
-/* Foto del resumen: sola, centrada y con sombra */
-.resumen-foto {
-  display: block;
-  margin: 1rem auto 1.5rem;       /* centrada */
-  width: clamp(180px, 45vw, 340px);/* tamaño sensible, no gigante */
-  height: auto;
-  border-radius: 18px;
-  box-shadow: 0 0 8px rgba(255,255,255,0.9); /* glow suave blanco */
-}
 
 
 /* Botón principal */
@@ -518,6 +533,23 @@ body {
 /* =========================
    SESIONES (cards)
    ========================= */
+   .sesiones-head {
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.25);
+  margin-bottom: 1rem;
+}
+.sesiones-head h1 {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  letter-spacing: .6px;
+}
+.sesiones-head p {
+  max-width: 72ch;
+  margin: .5rem auto 0;
+  line-height: 1.6;
+  color: #9575cd;  /* mismo tono que usás en encuentros */
+}
+
 .sessions-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(240px, 1fr));
@@ -760,6 +792,10 @@ body {
     top: calc(165px + 2rem); /* altura del logo (165) + padding vertical del header (1rem arriba + 1rem abajo) */
        /* scroll si se pasa */
   }
+  .home-hero .hero-box{ 
+    padding: 1.5rem 1rem; }
+  .resumen-foto{ 
+    width: 70%; max-width: 300px; }
 }
 
   #menu-toggle:checked ~ .nav ul {
