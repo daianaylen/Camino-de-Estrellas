@@ -35,7 +35,7 @@ body {
     HEADER OSCURO
     =============================================================*/
 .header {
-   background-color: #f7b896; /* durazno pastel */
+  background-color: #e8a16a; 
   border-bottom: 1px solid #e6bd8e;
   padding: 1rem 2rem;
   display: flex;
@@ -96,7 +96,7 @@ body {
 }
 /* Vuelve el contenedor del hero */
 .home-hero .hero-box{
-  background: rgba(255,240,245,0.44); /* translúcido rosado */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   border-radius: 24px;
   padding: 2rem 1.25rem;
   backdrop-filter: blur(4px);
@@ -151,13 +151,14 @@ body {
 .cta-primary {
   display: inline-block;
   margin-top: .5rem;
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   color: #fff;
   font-weight: 200;
   text-decoration: none;
   padding: .7rem 1rem;
   border-radius: 12px;
   transition: transform .15s ease, opacity .15s ease;
+  box-shadow: #ea7eb0 0 0 7px;
 }
 
 .cta-primary:hover { 
@@ -187,7 +188,7 @@ body {
   gap: 1rem;
 }
 .home-card {
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   color: #9575cd;
   border-radius: 18px;
   padding: 1.2rem;
@@ -202,17 +203,25 @@ body {
   transform: translateY(-3px);
   box-shadow: #fff 0 0 5px;
 }
-.card-emoji { font-size: 1.6rem; }
-.home-card h3 { font-size: 1.1rem; letter-spacing: .4px; }
-.home-card p { opacity: .9; line-height: 1.5; }
+.card-emoji { 
+  font-size: 1.6rem; 
+}
+.home-card h3 { 
+  font-size: 1.1rem; letter-spacing: .4px; 
+}
+.home-card p { 
+  opacity: .9; line-height: 1.5; 
+}
 .card-link {
   margin-top: auto;
   text-decoration: none;
   font-weight: 600;
-  background: #fff;
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: #e8a16a;
+}
+.card-link:hover {
+  color:#9575cd;
 }
 
 /* ===== ENCUENTROS: Álbum de fotos con carrusel ===== */
@@ -244,7 +253,7 @@ body {
 /* Card del carrusel (sin cambios grandes, por si ya lo tenías) */
 .carousel {
   position: relative;
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   color: #9575cd;
   border-radius: 18px;
   box-shadow: #fff 0 0 5px;
@@ -316,11 +325,11 @@ body {
 }
 .dots button {
   width: 8px; height: 8px; border-radius: 999px;
-  border: 1px solid #6777dc; background: #da9164; cursor: pointer;
+  border: 1px solid #6777dc; background: #e8a16a; cursor: pointer;
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
 }
 .dots button[aria-current="true"] {
-  background: linear-gradient(45deg, #ffd698, #ff99c8, #9575cd);
+  background: linear-gradient(45deg, #e8a16a, #ff99c8, #9575cd);
   border-color: #555;
   transform: scale(1.15);
 }
@@ -333,7 +342,7 @@ body {
 }
 
 .bio-container {
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   color: #9575cd;
   border-radius: 20px;
   padding: 1rem 1.5rem;
@@ -542,7 +551,7 @@ body {
   margin-bottom: 2.5rem;
 }
 .agenda-card {
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   border-radius: 16px;
   padding: 1.5rem;
   box-shadow: #fff 0 0 5px;
@@ -584,7 +593,7 @@ body {
   gap: 1rem;
 }
 .social-card {
-  background: rgba(255, 240, 245, 0.44); /* casi blanco con rosita */
+  background: rgba(255,240,245,0.24); /* translúcido rosado */
   color: #9575cd;
   border-radius: 16px;
   padding: 1.25rem;
@@ -608,12 +617,12 @@ body {
 .social-icon i { font-size: 1.6rem; }
 
 .footer {
-   background-color: #f7b896; /* durazno pastel */
+   background-color: #e8a16a; /* durazno pastel */
   color: #fff;
   border-top: 1px solid #e6bd8e;
   padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
   margin-top: 3rem;
 }
@@ -626,7 +635,7 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.footer a:hover {
+.footer :hover {
   opacity: 0.7;
   background: linear-gradient(45deg, #7193e9, #9575cd);
   -webkit-background-clip: text;
@@ -634,6 +643,7 @@ body {
   color: transparent;
   opacity: 1;
 }
+
 
 
 
@@ -757,4 +767,40 @@ body {
 @media (max-width: 600px) {
   .sessions-grid { grid-template-columns: 1fr; }
   .social-grid   { grid-template-columns: 1fr; }
+}
+
+
+
+/* === Separador personalizado con imagen y líneas === */
+.separador-personalizado {
+  align-items: center;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin: 0.2rem auto 0.1rem;
+  color: #fff;
+}
+/* Líneas a los lados */
+.separador-personalizado::before,
+.separador-personalizado::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  transition: background-color 0.3s ease;
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+}
+.separador-personalizado::before {
+  margin-right: 1rem;
+}
+.separador-personalizado::after {
+  margin-left: 1rem;
+}
+/* Imagen centrada (HTML) */
+.separador-personalizado img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+  vertical-align: middle;
 }
