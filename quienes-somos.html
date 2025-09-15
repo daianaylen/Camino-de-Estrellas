@@ -9,21 +9,18 @@
     <link rel="icon" href="multimedia/camino-logo-png-bl.png" type="image/png">
     <link rel="stylesheet" href="Estilos/estilos.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alice&family=MedievalSharp&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alice&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <header class="header">
- <a href="index.html" class="logo">
-  <img src="multimedia/camino-logo-png-bl.png" alt="Camino de Estrellas">
-</a>
+<header class="header">
+  <a href="index.html" class="logo">
+    <img src="multimedia/camino-logo-png-bl.png" alt="Camino de Estrellas">
+  </a>
 
   <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="hamburguesa">
-    &#9776;
-  </label>
+  <label for="menu-toggle" class="hamburguesa">&#9776;</label>
 
   <nav class="nav">
     <ul>
@@ -38,68 +35,131 @@
 <!-- Sección Quiénes Somos -->
 <section class="quienes-somos container">
   <h2>SOBRE NOSOTRAS</h2>
+
   <div class="bio-container">
 
     <!-- Sol -->
     <div class="bio sol">
       <div class="bio-text">
         <h3>⭐ Sol Vismara Riccardo</h3>
-        <h4>Terapeuta Holística & Mentora en talleres y cursos</h4>
-        <p>
-          Soy Sol Vismara Riccardo, terapeuta holística y mentora en cursos ligados al desarrollo y expansión personal desde el año 2020 en Córdoba Capital. 
-          Acompaño procesos de transformación y sanación teniendo una cosmovisión integral del ser humano. 
-          Esto quiere decir que en cada sesión y taller se trabaja desde lo espiritual integrando el alma, el cuerpo biológico, los factores fenomenológicos, 
-          los pensamientos y creencias, las emociones y el contexto que rodea a la persona.
-        </p>
+        <p class="rol">Terapeuta holística & mentora</p>
 
-        <p>Esto se realiza en diferentes caminos terapéuticos:</p>
-        <ul>
-          <li>📖 <strong>Registros Akáshicos:</strong> Espacio sagrado en conexión y compañía de tu alma, tus guías, maestros, ancestros, ángeles y arcángeles; donde recibirás información y ejercicios para tu transformación y expansión, para liberar memorias antiguas, soltar cargas, conectar con tu parte más profunda y avanzar hacia la vida que querés.</li>
-          <li>✨ <strong>Tarot del Alma:</strong> Espacio de escucha y claridad a través de las cartas del tarot en conexión con tu alma, dones y virtudes; brindando herramientas para la sanación, la conexión y la transformación en tu vida.</li>
-          <li>🕯️ <strong>Limpieza y Armonización (Códigos Ash):</strong> Técnica de reconexión, armonización y limpieza de todos tus cuerpos (mental, emocional, espiritual/energético, físico), en compañía de tus guías, maestros y los 7 arcángeles. Puede realizarse a personas, mascotas y espacios físicos. Libera bloqueos emocionales, memorias de estancamiento y expande amor, alegría y armonía en coherencia con tu ser.</li>
-          <li>🌠 <strong>Talleres y Jornadas Grupales:</strong> Junto a Clau co-creamos espacios colectivos de transformación tejiendo en red y amor. En cada encuentro compartimos nuestras medicinas del alma, integrando sabidurías de esta y otras vidas.</li>
+        <!-- Destacados -->
+        <ul class="kpis">
+          <li>Desde 2020</li>
+          <li>Enfoque integral</li>
+          <li>Presencial / Online</li>
         </ul>
 
-        <p>💫 <em>Mi propósito:</em> Acompañar tu proceso de reconexión con tu ser para que veas y encuentres tu magia, y crezcan la fuerza, el amor y la armonía que ya habitan en vos, en tu camino de estrellas.</p>
+        <!-- Resumen breve -->
+        <p class="lead">
+          Acompaño procesos de transformación con una mirada integral del ser: alma, cuerpo, mente, emociones y contexto.
+        </p>
+
+        <!-- Contenido extendido -->
+        <details>
+          <summary>Ver más sobre Sol</summary>
+
+          <p>
+            En sesiones y talleres integro lo espiritual con prácticas concretas para que avances hacia la vida que querés.
+            Trabajo desde Córdoba Capital y también en formato online.
+          </p>
+
+          <h4>Sesiones 1:1</h4>
+          <ul>
+            <li><strong>Registros Akáshicos:</strong> espacio sagrado en conexión con tu alma, guías, maestros y ancestros, con información y ejercicios para liberar memorias y reconectar con tu esencia.</li>
+            <li><strong>Tarot del Alma:</strong> claridad y herramientas para la sanación y la transformación, en conexión con tus dones y virtudes.</li>
+            <li><strong>Limpieza y Armonización (Códigos Ash):</strong> reconexión y equilibrio de los cuerpos mental, emocional, espiritual/energético y físico. También para mascotas y espacios.</li>
+          </ul>
+
+          <h4>Grupales</h4>
+          <ul>
+            <li><strong>Talleres & Jornadas:</strong> espacios colectivos de transformación co-creados junto a Clau, tejiendo en red y amor.</li>
+          </ul>
+
+          <p><em>Mi propósito:</em> acompañarte a reconectar con tu magia para que crezcan la fuerza, el amor y la armonía que habitan en vos.</p>
+        </details>
+
+        <!-- CTA -->
+        <p><a href="contacto.html">Agendar con Sol →</a></p>
       </div>
-      <img src="multimedia/sol.jpeg" alt="Sol Vismara Riccardo" class="bio-img">
+
+      <img
+        src="multimedia/sol sola.jpeg"
+        alt="Retrato de Sol Vismara, terapeuta holística"
+        class="bio-img"
+        loading="lazy" decoding="async" width="480" height="600">
     </div>
 
     <!-- Claudia -->
     <div class="bio claudia">
       <div class="bio-text">
         <h3>🌿 Claudia Natalia Alesandrini</h3>
-        <h4>Terapeuta Holística & Facilitadora en Constelaciones Familiares</h4>
-        <p>
-          Soy Claudia Natalia Alesandrini, terapeuta holística y facilitadora en Constelaciones Familiares desde el año 2019, en Córdoba Capital, Argentina.
-          Acompaño procesos de transformación y sanación a través de diferentes caminos terapéuticos:
-        </p>
-        <ul>
-          <li>✨ <strong>Sesiones de Alquimia (Terapia de Sanación):</strong> Un espacio profundo donde nos enfocamos en la sanación del alma. Trabajamos con ejercicios de liberación y transmutación energética, en conexión con los 7 Arcángeles y los Registros Akáshicos, permitiendo que la energía vuelva a fluir en armonía.</li>
-          <li>🌿 <strong>Constelaciones Familiares:</strong> Facilito encuentros individuales y grupales basados en el método de las Nuevas Constelaciones de Bert Hellinger y en los Órdenes del Amor. Un camino que abre la posibilidad de reconocer, honrar y liberar los vínculos familiares, generando comprensión y sanación en lo profundo.</li>
-          <li>🌠 <strong>Talleres y Jornadas Grupales:</strong> Junto a Sol, co-creamos espacios colectivos de transformación. En cada encuentro compartimos nuestras medicinas del alma, integrando sabidurías de esta vida y de otras, junto con los conocimientos adquiridos en el camino.</li>
+        <p class="rol">Terapeuta holística & facilitadora en Constelaciones</p>
+
+        <!-- Destacados -->
+        <ul class="kpis">
+          <li>Desde 2019</li>
+          <li>Órdenes del Amor</li>
+          <li>Individual / Grupal</li>
         </ul>
-        <p>💫 <em>Mi propósito:</em> acompañarte a reconectar con tu alma, para que encuentres fuerza, claridad y paz en tu camino.</p>
+
+        <!-- Resumen breve -->
+        <p class="lead">
+          Te acompaño a ordenar vínculos, liberar bloqueos y recuperar claridad y paz a través de Constelaciones y Terapia de Alquimia.
+        </p>
+
+        <!-- Contenido extendido -->
+        <details>
+          <summary>Ver más sobre Clau</summary>
+
+          <p>
+            Trabajo en Córdoba Capital y online. Integro herramientas energéticas y sistémicas para que la energía vuelva a fluir en armonía.
+          </p>
+
+          <h4>Sesiones 1:1</h4>
+          <ul>
+            <li><strong>Alquimia (Terapia de Sanación):</strong> proceso profundo con ejercicios de liberación y transmutación energética en conexión con los 7 Arcángeles y Registros Akáshicos.</li>
+            <li><strong>Constelaciones Familiares:</strong> método de Nuevas Constelaciones (Bert Hellinger) y Órdenes del Amor para reconocer, honrar y liberar dinámicas del sistema familiar.</li>
+          </ul>
+
+          <h4>Grupales</h4>
+          <ul>
+            <li><strong>Talleres & Jornadas:</strong> espacios de transformación co-creados junto a Sol, integrando saberes de esta y otras vidas.</li>
+          </ul>
+
+          <p><em>Mi propósito:</em> acompañarte a reconectar con tu alma para encontrar fuerza, claridad y paz en tu camino.</p>
+        </details>
+
+        <!-- CTA -->
+        <p><a href="contacto.html">Agendar con Clau →</a></p>
       </div>
-      <img src="multimedia/clau.jpeg" alt="Claudia Natalia Alesandrini" class="bio-img">
+
+      <img
+        src="multimedia/clau sola.jpeg"
+        alt="Retrato de Claudia Alesandrini, facilitadora en Constelaciones"
+        class="bio-img"
+        loading="lazy" decoding="async" width="480" height="600">
     </div>
 
     <!-- Texto final -->
     <div class="bio texto-final">
       <p class="texto-final-p">
-        Creemos en la visión del ser humano integral como parte del todo, reconociendo su alma, biología, mente, emociones y contexto. 
-        Con el acompañamiento de guías, Madre Tierra, ángeles y maestros, podemos reconectarnos y renacer hacia la vida que merecemos y deseamos.
+        Creemos en un ser integral que es parte del todo: alma, biología, mente, emociones y contexto.
+        Con el acompañamiento de la Madre Tierra, guías, ángeles y maestros, podemos reconectarnos y renacer hacia la vida que merecemos.
       </p>
       <div class="cierrecito-cute">
-        <p>Nos sentimos sumamente agradecidas y expandidas en amor por poder compartir este viaje de luz.</p>
+        <p>Gracias por caminar este viaje de luz junto a nosotras.</p>
       </div>
     </div>
 
   </div>
 </section>
+
 <script src="javascript/script.js"></script>
+
 <footer class="footer">
-  <div class="footer-texto">A14 Studio 2025 — Camino de Estrellas</div>
+  <div class="footer-texto">A14 Studio — Camino de Estrellas</div>
   <div class="footer-redes">
     <a href="mailto:caminodeestrellas111@gmail.com"><i class="fa-solid fa-envelope"></i></a>
     <a href="https://www.instagram.com/camino_deestrellas_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
