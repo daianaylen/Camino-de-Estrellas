@@ -182,7 +182,9 @@ body {
   line-height: 1.6; 
 }
 
-
+.titulo-h2 {
+  text-align: center;
+}
 /* ===== CARDS ===== */
 .home-cards {
   display: grid;
