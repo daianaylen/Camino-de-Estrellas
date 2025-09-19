@@ -445,14 +445,14 @@ body {
   .bio-container .bio li { 
     padding-left: .2rem; 
     margin: .35rem 0; } 
-    /* Foto */ 
+    
     .bio-container .bio-img { 
       grid-area: photo; 
       width: 200px; 
       height: 200px; 
       border-radius: 50%; 
       object-fit: cover; 
-      box-shadow: 0 0 5px rgba(255,255,255,0.8); 
+      box-shadow: 0 0 6px rgba(255,255,255,0.9);
       align-self: start; 
     } 
     /* Alterno el orden solo para Claudia (foto | texto) */ 
@@ -925,8 +925,7 @@ details[open] summary { margin-bottom: .6rem; }
     margin-top: .75rem; 
     width: 200px; 
     height: 200px;
-    box-shadow: 0 8px 20px rgb(247, 244, 244), 
-                0 0 0 3px rgba(255,255,255,.6) inset;
+    box-shadow: 0 0 6px rgba(255,255,255,0.9);
   } 
   .bio-text .lead { margin-top: .25rem; }
   .texto-final { 
@@ -970,8 +969,6 @@ details[open] summary { margin-bottom: .6rem; }
   .bio-container .bio-img {
     width: 220px;
     height: 220px;
-    box-shadow: 0 8px 20px rgb(247, 244, 244), 
-                0 0 0 3px rgba(255,255,255,.6) inset;
   }
 
   .bio-text {
