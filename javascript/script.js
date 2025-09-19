@@ -19,6 +19,23 @@
       return Math.max(1, Math.min(slides.length, val));
     }
 
+    // === helpers para medir en px considerando el gap del grid ===
+    function getGapPx() {
+      const cs = getComputedStyle(track);
+      // gap puede venir como "12px" o "12px 12px"; tomamos el primero
+      const raw = cs.gap.split(" ")[0];
+      return parseFloat(raw) || 0;
+    }
+
+    function getStepPx() {
+      const perView = getPerView();
+      const gap = getGapPx();
+      const vw = viewport.clientWidth; // ancho visible del carrusel
+      const slideWidth = (vw - (perView - 1) * gap) / perView;
+      // cada “paso” = ancho de una columna + un gap
+      return slideWidth + gap;
+    }
+
     let perView = getPerView();
     let index = 0;
     let maxIndex = Math.max(0, slides.length - perView);
@@ -44,9 +61,10 @@
       if (index > maxIndex) index = maxIndex;
       if (dotsC && dotsC.children.length !== pages) buildDots();
 
-      const slideWidthPct = 100 / perView;
-      const offset = -index * slideWidthPct;
-      track.style.transform = `translateX(${offset}%)`;
+      // ✅ desplazamiento en PX, contemplando el gap para que calce perfecto
+      const stepPx = getStepPx();
+      const offsetPx = -index * stepPx;
+      track.style.transform = `translateX(${offsetPx}px)`;
 
       if (dotsC) {
         Array.from(dotsC.children).forEach((d, i) => {
@@ -76,9 +94,7 @@
     });
 
     // Swipe / drag
-    let startX = 0,
-      currentX = 0,
-      dragging = false;
+    let startX = 0, currentX = 0, dragging = false;
 
     function getX(e) {
       return e.touches ? e.touches[0].clientX : e.clientX;
@@ -90,20 +106,26 @@
       currentX = startX;
       track.style.transition = "none";
     }
+
     function onMove(e) {
       if (!dragging) return;
       currentX = getX(e);
       const dx = currentX - startX;
-      const perc = (dx / viewport.clientWidth) * 100 / getPerView();
-      const basePct = -(index * (100 / getPerView()));
-      track.style.transform = `translateX(${basePct + perc}%)`;
+
+      // ✅ base + desplazamiento en PX (consistente con update())
+      const stepPx = getStepPx();
+      const basePx = -(index * stepPx);
+      track.style.transform = `translateX(${basePx + dx}px)`;
     }
+
     function onEnd() {
       if (!dragging) return;
       dragging = false;
       track.style.transition = "";
+
       const dx = currentX - startX;
       const threshold = viewport.clientWidth * 0.12;
+
       if (Math.abs(dx) > threshold) {
         if (dx < 0) goTo(index + 1);
         else goTo(index - 1);

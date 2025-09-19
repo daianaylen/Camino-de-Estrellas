@@ -245,6 +245,8 @@ body {
 }
 /*ENCUENTROS*/
 .album { margin-top: 1.4rem; }
+
+/* Título álbum */
 .album-title h2 {
   color: #fff;
   font-size: clamp(1.1rem, 2.4vw, 1.6rem);
@@ -252,42 +254,55 @@ body {
   margin-bottom: .6rem;
 }
 
-/* Card del carrusel (sin cambios grandes, por si ya lo tenías) */
+/* Card del carrusel */
 .carousel {
   position: relative;
-  background: rgba(255,240,245,0.24); /* translúcido rosado */
+  background: rgba(255,240,245,0.24);
   color: #222;
   border-radius: 18px;
   box-shadow: #fff 0 0 2px;
   padding: .8rem .9rem 1.2rem;
-  /* NUEVO: control responsive por CSS variables */
-  --per-view: 1;   /* mobile: 1 foto */
-  --gap: .5rem;
+
+  /* ✅ DEFAULTS NECESARIOS */
+  --per-view: 2;   /* tablet/desktop chico = 2 por vista */
+  --gap: .8rem;
+
+  padding-inline: 1rem; /* “peek” lateral */
 }
 
-/* El viewport no ocupa toda la pantalla: centrado y con ancho máximo */
+/* Viewport centrado y con máscara para el peek */
 .viewport {
   overflow: hidden;
   border-radius: 12px;
-  max-width: min(100%, 980px);  /* límite para que no “desborde” */
+  max-width: min(100%, 980px);
   margin: 0 auto;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 18px, black calc(100% - 18px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 18px, black calc(100% - 18px), transparent 100%);
 }
-/* Track: columnas iguales según --per-view */
+
+/* Track: columnas según --per-view */
 .track {
   display: grid;
   grid-auto-flow: column;
-  gap: var(--gap);
-  grid-auto-columns: calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  gap: var(--gap, .8rem);
+  grid-auto-columns: calc(
+    (100% - (var(--per-view, 1) - 1) * var(--gap, .8rem))
+    / var(--per-view, 1)
+  );
   transition: transform .35s ease;
   will-change: transform;
 }
+
 /* Slides con formato vertical (mejor para fotos en vertical) */
 .slide {
   position: relative;
-  aspect-ratio: 3 / 4;     /* vertical */
+  aspect-ratio: 3 / 4;
   border-radius: 12px;
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
 }
+
 .slide img {
   width: 100%;
   height: 100%;
@@ -315,9 +330,13 @@ body {
   line-height: 1;
   transition: transform .15s ease, opacity .15s ease, border-color .15s ease;
   z-index: 2;
-}
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+} /* ✅ cerramos la llave que faltaba */
+
+.cnav:hover { transform: translateY(-50%) scale(1.05); }
 .cnav.prev { left: .4rem; }
 .cnav.next { right: .4rem; }
+
 /* Dots */
 .dots {
   display: flex;
@@ -329,12 +348,42 @@ body {
   width: 8px; height: 8px; border-radius: 999px;
   border: 1px solid #6777dc; background: #e8a16a; cursor: pointer;
   transition: transform .15s ease, background .15s ease, border-color .15s ease;
+  transform: scale(1);
 }
 .dots button[aria-current="true"] {
   background: linear-gradient(45deg, #e8a16a, #ff99c8, #9575cd);
   border-color: #555;
   transform: scale(1.15);
 }
+.proximos {
+  margin-top: 2rem;
+  background: rgba(255,240,245,0.15);
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.proximos-content {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.evento {
+  background: rgba(255,255,255,.05);
+  padding: .9rem 1rem;
+}
+
+.evento h3 {
+  font-size: 1.1rem;
+  margin-bottom: .4rem;
+  color: #222;
+}
+.evento p {
+  margin: .2rem 0;
+  font-size: .95rem;
+  color: #eee;
+}
+
 
 /*quienes somos*/
 .quienes-somos { 
@@ -477,16 +526,18 @@ body {
 .session-card .session-points {
   list-style: none;
   margin: .4rem 0 0;
-  padding: 0;
+  padding: 1;
 }
 .session-card .session-points li {
   position: relative;
-  padding-left: 1.1rem;
+  padding-left: 1.6rem;
   margin: .25rem 0;
   line-height: 1.5;
 }
+
+
 .session-card .session-points li::before {
-  content: "•";
+  content: "⭐  ";
   position: absolute;
   left: 0;
   top: 0;
@@ -598,6 +649,50 @@ body {
 .social-icon i { 
   font-size: 1.6rem; 
 }
+.pagos {
+  margin-top: 2rem;
+  background: rgba(255,240,245,0.15);
+  padding: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+
+.pagos-content {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.pago {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.pago:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+
+.pago i {
+  font-size: 2rem;
+  margin-bottom: .6rem;
+  color: #e8a16a; /* mismo color que tus dots activos */
+}
+
+.pago h3 {
+  font-size: 1.05rem;
+  margin-bottom: .3rem;
+  color: #222;
+}
+.pago p {
+  font-size: .9rem;
+  color: #eee;
+}
+
 
 .footer {
    background-color: #e8a16a; /* durazno pastel */
@@ -643,19 +738,25 @@ body {
   }
 }
 /*MOBILE DE ENCUENTROS*/
-/* Responsivo encuentros fotos*/
-@media (max-width: 768px) {
-  .carousel { padding: .6rem .6rem 1rem; 
-    --per-view: 2; /* 2 fotos en mobile*/
+@media (max-width: 767px) {
+  .carousel {
+    --per-view: 1!important; /* 1 por vista en mobile */
+    padding-inline: .6rem;  /* menos padding lateral */
   }
   .cnav { width: 34px; height: 34px; font-size: 1.2rem; }
-  .slide { height: clamp(200px, 56vw, 320px); 
-  aspect-ratio: 4 / 5;}
+  .slide { height: clamp(200px, 56vw, 320px); aspect-ratio: 4 / 5;}
+  .track {
+   justify-items: center;
+}
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .carousel { --per-view: 2!important; } /* 2 por vista en intermedio */
+}
 
-}
 @media (min-width: 1200px) {
-  .carousel { --per-view: 3; }
+  .carousel { --per-view: 3!important; } /* 3 por vista en desktop grande */
 }
+
 /* =============================================================
    MOBILE (menú desplegable desde debajo del header)
    =============================================================*/
@@ -842,7 +943,7 @@ details[open] summary { margin-bottom: .6rem; }
   .container { width: 95%; padding: 1.5rem 0; } 
 }
 
-/* -------------------- DESKTOP (≥ 992px) -------------------- */
+/* -------------------- DMEDIA QUIENES SOMOS -------------------- */
 @media (min-width: 992px) {
   .quienes-somos { 
     max-width: 1080px; 
