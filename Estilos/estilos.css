@@ -498,6 +498,57 @@ body {
           color: #fff; 
           text-shadow: 0 0 4px rgba(255,214,100,0.9), 0 0 6px rgba(255,214,100,0.6); 
         }
+    
+
+
+
+
+
+/* ===== FOTO JUNTAS ===== */
+
+.juntas-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0 2rem 0;
+}
+
+.juntas-img {
+  width: 320px;           /* base mobile */
+  height: 320px;
+  border-radius: 50%;     /* circular */
+  object-fit: cover;
+  object-position: center;
+  border: 4px solid rgba(255,255,255,.6);
+  box-shadow: 0 0 10px rgba(255,255,255,0.9);
+  transition: transform .3s ease;
+}
+
+.juntas-img:hover {
+  transform: scale(1.03);
+}
+
+/* ===== Desktop ===== */
+@media (min-width: 992px) {
+  .juntas-img {
+    width: 420px;   /* más grande que las individuales */
+    height: 420px;
+  }
+}
+
+.linkito {
+  color: #ea7eb0;
+  font-size: 1.5rem;
+  font-style: oblique;
+}
+.linkito:hover{
+  color: #da5392;
+}
+
+
+
+
+
 /* =========================
    SESIONES (cards)
    ========================= */
